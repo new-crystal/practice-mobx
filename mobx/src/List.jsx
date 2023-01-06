@@ -8,19 +8,25 @@ const List = () =>{
     const inputRef = useRef(null);
 
     const onClickAddBtn = () =>{
+        if(inputRef.current.value === ""){
+            return;
+        }
         const data = {
             id:id,
             content: inputRef.current.value
         }
         listStore.add(data)
-        setId( id + 1)
+        setId(id + 1)
         inputRef.current.value = ""
     }
 
+    const onClickRemoveBtn = (id) =>{
+       listStore.remove(id)
+    }
     return(
         <div>
             {listStore.todoList.map((todo)=>{
-               return <h1 key={todo.id}>{todo.content}</h1>
+               return (<><h1 key={todo.id}>{todo.content}</h1> <button onClick={()=>onClickRemoveBtn(todo.id)}>-</button></>)
             })}
             
             <input ref={inputRef}/>
