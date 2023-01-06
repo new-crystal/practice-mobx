@@ -1,5 +1,5 @@
 # Mobx couter + add/remove
 
-### numStore & Counter -> couter
+### numStore & Counter -> counter
 
 ### listStore & list -> list
