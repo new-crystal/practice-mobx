@@ -23,6 +23,7 @@ const List = () =>{
     const onClickRemoveBtn = (id) =>{
        listStore.remove(id)
     }
+
     return(
         <div>
             {listStore.todoList.map((todo)=>{
