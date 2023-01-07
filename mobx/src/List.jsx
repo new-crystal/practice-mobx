@@ -24,7 +24,7 @@ const List = () =>{
        listStore.remove(id)
     }
 
-    return(
+    return useObserver(()=>(
         <div>
             {listStore.todoList.map((todo)=>{
                return (<><h1 key={todo.id}>{todo.content}</h1> <button onClick={()=>onClickRemoveBtn(todo.id)}>-</button></>)
@@ -33,7 +33,7 @@ const List = () =>{
             <input ref={inputRef}/>
             <button onClick={onClickAddBtn}>+</button>
         </div>
-    )
+    ))
 }
 
 export default List
