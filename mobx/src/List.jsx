@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import Store from "./store"
 
 const List = () =>{
-    const [id, setId] = useState(1)
+    const [id, setId] = useState(2)
     const {listStore} = Store();
     const inputRef = useRef(null);
 
